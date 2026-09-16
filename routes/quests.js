@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const usersController = require('../controllers/quests');
+const questsController = require('../controllers/quests');
 
-router.get('/', usersController.getAll);
+router.get('/', questsController.getAll);
 
-router.get('/:id', usersController.getSingle);
+router.get('/:id', questsController.getSingle);
 
-router.post('/', usersController.createQuest);
+router.post('/', questsController.createQuest);
 
-router.put('/:id', usersController.updateQuest);
+router.put('/:id', questsController.updateQuest);
 
-router.delete('/:id', usersController.deleteQuest);
+router.delete('/:id', questsController.deleteQuest);
 
 module.exports = router;
