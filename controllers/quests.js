@@ -2,6 +2,7 @@ const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res) => {
+    //#swagger.tags=['quests']
     const result = await mongodb.getDatabase().db().collection('quests').find();
     result.toArray().then((quests) => {
         res.setHeader('Content-Type', 'application/json');
@@ -10,6 +11,7 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+    //#swagger.tags=['quests']
     const questId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db().collection('quests').find({ _id: questId});
     result.toArray().then((quests) => {
@@ -19,6 +21,7 @@ const getSingle = async (req, res) => {
 };
 
 const createQuest = async (req, res) => {
+    //#swagger.tags=['quests']
     const quest = {
         name: req.body.name,
         description: req.body.description,
@@ -39,6 +42,7 @@ const createQuest = async (req, res) => {
 };
 
 const updateQuest = async (req, res) => {
+    //#swagger.tags=['quests']
     const questId = new ObjectId(req.params.id);
     const quest = {
         name: req.body.name,
@@ -60,6 +64,7 @@ const updateQuest = async (req, res) => {
 };
 
 const deleteQuest = async (req, res) => {
+    //#swagger.tags=['quests']
     const questId = new ObjectId(req.params.id);
     const response = await mongodb.getDatabase().db().collection('quests').deleteOne({ _id: questId }); 
 
