@@ -5,8 +5,8 @@ const doc = {
         title: 'Quests API',
         description: 'Quests API'
     },
-    host: 'localhost:3333',
-    schemes: ['http']
+    host: 'cse-341-project2-cqkx.onrender.com',
+    schemes: ['https']
 };
 
 const outputFile = './swagger.json';

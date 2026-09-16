@@ -5,10 +5,10 @@
     "description": "Quests API",
     "version": "1.0.0"
   },
-  "host": "localhost:3333",
+  "host": "cse-341-project2-cqkx.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
@@ -24,9 +24,25 @@
         }
       }
     },
-    "/quests/": {
+    "/api-docs": {
       "get": {
         "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/quests/": {
+      "get": {
+        "tags": [
+          "quests"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -34,6 +50,9 @@
         }
       },
       "post": {
+        "tags": [
+          "quests"
+        ],
         "description": "",
         "parameters": [
           {
@@ -79,7 +98,13 @@
     },
     "/quests/{id}": {
       "get": {
+        "tags": [
+          "quests"
+        ],
         "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -95,6 +120,9 @@
         }
       },
       "put": {
+        "tags": [
+          "quests"
+        ],
         "description": "",
         "parameters": [
           {
@@ -144,6 +172,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "quests"
+        ],
         "description": "",
         "parameters": [
           {
