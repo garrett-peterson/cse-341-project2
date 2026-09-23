@@ -3,14 +3,16 @@ const router = express.Router();
 
 const questsController = require('../controllers/quests');
 
+const { isAuthenticated } = require("../middleware/authenticate")
+
 router.get('/', questsController.getAll);
 
 router.get('/:id', questsController.getSingle);
 
-router.post('/', questsController.createQuest);
+router.post('/', isAuthenticated, questsController.createQuest);
 
-router.put('/:id', questsController.updateQuest);
+router.put('/:id', isAuthenticated, questsController.updateQuest);
 
-router.delete('/:id', questsController.deleteQuest);
+router.delete('/:id', isAuthenticated, questsController.deleteQuest);
 
 module.exports = router;
